@@ -214,7 +214,7 @@ class PactEffectKind(Enum):
 def find_effects(d, effects, damage_types, num_rounds):
     dictionaries_to_search = []
     for k, v in d.items():
-        if d["$__type"] == "class SpellEffect":
+        if d["$__type"] == "class SpellEffect" or (d["$__type"] == "class ShadowPactSpellEffect" and len(d["m_effectList"]) == 0):
             match k:
                 case "m_effectParam":
                     effects.append(v)
