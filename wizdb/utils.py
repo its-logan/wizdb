@@ -85,28 +85,28 @@ def op_to_dict(type_list: TypeList, v):
         return [op_to_dict(type_list, e) for e in v]
     
     elif isinstance(v, Vec3):
-        return f"(x={v.x}, y={v.y}, z={v.z})"
+        return f"({v.x}, {v.y}, {v.z})"
     
     elif isinstance(v, Quaternion):
-        return f"(z={v.x}, y={v.y=}, z={v.z}, w={v.w})"
+        return f"({v.x}, {v.y=}, {v.z}, {v.w})"
     
     elif isinstance(v, Matrix):
         return f"[{v.i}, {v.j}, {v.k}]"
     
     elif isinstance(v, Euler):
-        return f"(pitch={v.pitch}, yaw={v.yaw}, roll={v.roll})"
+        return f"({v.pitch}, {v.yaw}, {v.roll})"
     
     elif isinstance(v, PointInt) or isinstance(v, PointFloat):
-        return f"(x={v.x}, y={v.y})"
+        return f"({v.x}, {v.y})"
     
     elif isinstance(v, SizeInt):
         return f"({v.width}, {v.height})"
     
     elif isinstance(v, RectInt) or isinstance(v, RectFloat):
-        return f"(left={v.left}, top={v.top}, right={v.right}, bottom={v.bottom})"
+        return f"({v.left}, {v.top}, {v.right}, {v.bottom})"
     
     elif isinstance(v, Color):
-        return f"(r={v.r}, g={v.g}, b={v.b}, a={v.a})"
+        return f"({v.r}, {v.g}, {v.b}, {v.a})"
     
     return v
 
