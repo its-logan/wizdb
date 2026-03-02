@@ -77,7 +77,7 @@ DISPOSITION = [
 
 def op_to_dict(type_list: TypeList, v):
     if isinstance(v, LazyObject):
-        lazy_dict = {k: op_to_dict(type_list, e) for k, e in v.items(type_list)}
+        lazy_dict = {k: op_to_dict(type_list, e) for k, e in v.items()}
         lazy_dict["$__type"] = type_list.name_for(v.type_hash)
         return lazy_dict
     
